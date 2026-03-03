@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Nirjala Shrestha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --bg: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #f8fafc;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .cv-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border-radius: 4px;
+        }
+
+        header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            letter-spacing: -0.02em;
+        }
+
+        .title {
+            font-size: 1.25rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-top: 5px;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-light);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        .item {
+            margin-bottom: 20px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .item-sub {
+            display: flex;
+            justify-content: space-between;
+            color: var(--primary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .skill-cat {
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                padding: 0;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+
+        .no-print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="javascript:window.print()" class="no-print-btn no-print">Print to PDF</a>
+
+    <div class="cv-container">
+        <header>
+            <div>
+                <h1>Nirjala Shrestha</h1>
+                <div class="title">UI/UX Designer & Frontend Enthusiast</div>
+            </div>
+            <div class="contact-info">
+                <div>Pokhara, Nepal</div>
+                <div>pratistha708@gmail.com</div>
+                <div>github.com/Nirjala34</div>
+            </div>
+        </header>
+
+        <section>
+            <h2>Summary</h2>
+            <p class="desc">
+                Creative UI/UX Designer with a strong eye for clean, modern aesthetics. Passionate about building
+                intuitive digital products that balance beauty with usability. Skilled in Figma and design systems,
+                complemented by hands-on knowledge of frontend development (HTML, CSS, JS, .NET).
+            </p>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span>BIT (Bachelors in Information Technology)</span>
+                    <span>2023 — Present</span>
+                </div>
+                <div class="item-sub">Informatics College Pokhara</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Work Experience</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span>SEO Intern</span>
+                    <span>January 2026 — Present</span>
+                </div>
+                <div class="item-sub">Fishtail Info Solutions</div>
+                <p class="desc">Applying SEO techniques including keyword research, content optimization, and
+                    link-building to improve website visibility and search rankings.</p>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <span>Junior Designer</span>
+                    <span>April 2025 — January 2026</span>
+                </div>
+                <div class="item-sub">Nipuna Prabidhik Sewa</div>
+                <p class="desc">Designing responsive web interfaces and mobile app screens. Redesigning existing UIs for
+                    better user retention and modern aesthetics.</p>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <span>UI/UX Intern</span>
+                    <span>April 2025 — July 2025</span>
+                </div>
+                <div class="item-sub">Nipuna Prabidhik Sewa</div>
+                <p class="desc">Learned UI/UX design principles, tools, and best practices, and applied them to
+                    real-world projects.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div>
+                    <span class="skill-cat">Design</span>
+                    <span class="desc">Figma, Canva, Prototyping, Wireframing</span>
+                </div>
+                <div>
+                    <span class="skill-cat">Development</span>
+                    <span class="desc">HTML5, CSS3, JavaScript, .NET, Laravel</span>
+                </div>
+                <div>
+                    <span class="skill-cat">Tools & Others</span>
+                    <span class="desc">GitHub, Jira, SEO, Professional Communication</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Key Projects</h2>
+            <p class="desc">
+                <strong>Luxury Nepal:</strong> Travel App UI/UX design featuring complex booking flows.<br>
+                <strong>MoodDiary:</strong> .NET Web Application for emotional tracking and journaling.<br>
+                <strong>Purito:</strong> High-fidelity Skincare E-commerce Mobile UI.
+            </p>
+        </section>
+    </div>
+</body>
+
+</html>
