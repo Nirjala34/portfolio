@@ -8,13 +8,6 @@ if (window.location.search) {
   window.history.replaceState({}, document.title, window.location.pathname + window.location.hash);
 }
 
-/* ── CURSOR GLOW ──────────────────────────────── */
-const cursorGlow = document.getElementById('cursorGlow');
-document.addEventListener('mousemove', (e) => {
-  cursorGlow.style.left = e.clientX + 'px';
-  cursorGlow.style.top = e.clientY + 'px';
-});
-
 /* ── NAVBAR SCROLL ────────────────────────────── */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
@@ -117,12 +110,12 @@ function renderSkills() {
 /* ── PROJECTS DATA & RENDER ───────────────────── */
 // Use colored gradient backgrounds as placeholders
 const projectColors = [
-  'linear-gradient(135deg,#1e1b4b,#312e81,#4338ca)',
-  'linear-gradient(135deg,#0f172a,#1e3a5f,#1d4ed8)',
-  'linear-gradient(135deg,#0f2027,#203a43,#2c5364)',
-  'linear-gradient(135deg,#1a0533,#3d1168,#7c3aed)',
-  'linear-gradient(135deg,#0d1b2a,#1b4332,#059669)',
-  'linear-gradient(135deg,#1c0000,#450a0a,#dc2626)',
+  'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
+  'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
+  'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
+  'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
+  'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
+  'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
 ];
 
 const projects = [
@@ -130,7 +123,7 @@ const projects = [
     title: 'Luxury Nepal — Travel App UI',
     desc: 'A complete Travel App UI/UX design built in Figma — featuring destination discovery, booking flows, itinerary planning, and a vibrant, modern visual identity celebrating Nepal.',
     stack: ['Figma', 'UI Design', 'Prototyping', 'User Flows'],
-    tag: 'web', color: 'linear-gradient(135deg,#0f2027,#1a4a3a,#059669)',
+    tag: 'web', color: 'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
     liveUrl: 'https://www.figma.com/design/6PPUwGoz1CffPnE4MeCow0/Untitled?node-id=428-706&t=TnFhXAsnV08EoMuK-1',
     githubUrl: '#', featured: true,
   },
@@ -138,7 +131,7 @@ const projects = [
     title: 'Purito — Skincare App UI',
     desc: 'A clean and elegant Skincare App UI designed in Figma — featuring product discovery, skin type quiz, ingredient explorer, and a soft, premium aesthetic.',
     stack: ['Figma', 'UI Design', 'Mobile UI', 'Prototyping'],
-    tag: 'web', color: 'linear-gradient(135deg,#2d1b4e,#6b2fa0,#c084fc)',
+    tag: 'web', color: 'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
     liveUrl: 'https://www.figma.com/design/6PPUwGoz1CffPnE4MeCow0/Untitled?node-id=2203-7959&t=hUQ0B1TAfxttXVfx-1',
     githubUrl: '#',
   },
@@ -146,7 +139,7 @@ const projects = [
     title: 'Audely — Mobile App UI',
     desc: 'A sleek and modern mobile app UI designed in Figma — thoughtfully crafted user flows, clean layouts, and an intuitive interactive prototype.',
     stack: ['Figma', 'Mobile UI', 'Prototyping', 'User Flows'],
-    tag: 'mobile', color: 'linear-gradient(135deg,#0f172a,#1e3a5f,#0ea5e9)',
+    tag: 'mobile', color: 'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
     liveUrl: 'https://www.figma.com/design/MeQ4tExf6vHtKaoqykMHsN/Untitled?node-id=244-832&t=7Rhx7lBfD9mjq0IJ-1',
     githubUrl: '#',
   },
@@ -154,7 +147,7 @@ const projects = [
     title: 'Fresh Bakey — Food App UI',
     desc: 'A warm and appetizing Food Delivery & Bakery app UI — featuring menu browsing, order flows, and a delightful visual design crafted in Figma.',
     stack: ['Figma', 'UI Design', 'Prototyping', 'Mobile UI'],
-    tag: 'web', color: 'linear-gradient(135deg,#431407,#9a3412,#f97316)',
+    tag: 'web', color: 'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
     liveUrl: 'https://www.figma.com/design/MeQ4tExf6vHtKaoqykMHsN/Untitled?node-id=1552-1488&t=7Rhx7lBfD9mjq0IJ-1',
     githubUrl: '#',
   },
@@ -162,7 +155,7 @@ const projects = [
     title: 'Nipuna Prabidhik Sewa — Website Design',
     desc: 'A professional website design for Nipuna Prabidhik Sewa — clean layout, modern UI components, and a user-friendly structure built in Figma.',
     stack: ['Figma', 'Web Design', 'UI Design', 'Prototyping'],
-    tag: 'web', color: 'linear-gradient(135deg,#0c1445,#1e3a8a,#3b82f6)',
+    tag: 'web', color: 'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
     liveUrl: 'https://www.figma.com/design/MeQ4tExf6vHtKaoqykMHsN/Untitled?node-id=0-1&t=7Rhx7lBfD9mjq0IJ-1',
     githubUrl: '#',
   },
@@ -170,7 +163,7 @@ const projects = [
     title: 'Nipuna Prabidhik Sewa — Website Design',
     desc: 'A complete supermarket e-commerce website design in Figma — product listings, categories, cart flow, and a clean, accessible shopping experience.',
     stack: ['Figma', 'Web Design', 'E-Commerce UI', 'Prototyping'],
-    tag: 'web', color: 'linear-gradient(135deg,#052e16,#166534,#22c55e)',
+    tag: 'web', color: 'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
     liveUrl: 'https://www.figma.com/design/MeQ4tExf6vHtKaoqykMHsN/Untitled?node-id=0-1&t=7Rhx7lBfD9mjq0IJ-1',
     githubUrl: '#',
   },
@@ -178,7 +171,7 @@ const projects = [
     title: 'MoodDiary — .NET Web App',
     desc: 'A mood tracking web application built with ASP.NET — lets users log daily moods, write journal entries, and visualise emotional patterns over time.',
     stack: ['.NET', 'C#', 'ASP.NET', 'HTML/CSS'],
-    tag: 'web', color: 'linear-gradient(135deg,#1a0533,#4c1d95,#7c3aed)',
+    tag: 'web', color: 'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
     liveUrl: 'https://github.com/Nirjala34/MoodDiary/tree/main',
     githubUrl: 'https://github.com/Nirjala34/MoodDiary/tree/main',
   },
@@ -186,7 +179,7 @@ const projects = [
     title: 'Redesigning QMB — Mobile App UI',
     desc: 'Redesigned the mobile app UI originally created by a senior designer — improved visual hierarchy, modernised components, and enhanced the overall user experience in Figma.',
     stack: ['Figma', 'Mobile UI', 'Prototyping', 'User Flows'],
-    tag: 'mobile', color: 'linear-gradient(135deg,#0c1a2e,#0e4a6e,#0891b2)',
+    tag: 'mobile', color: 'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
     liveUrl: 'https://www.figma.com/design/djJuCQnfQol4E4QeGDAxVa/QMB-Mobile-App?node-id=3311-3&t=C7StpmhLZ1zvUq6g-1',
     githubUrl: '#',
   },
@@ -194,7 +187,7 @@ const projects = [
     title: 'AI Spam Detection Filter',
     desc: 'A machine learning spam detection model built with Python in Jupyter Notebook — classifies messages as spam or ham using NLP techniques and trained on real email datasets.',
     stack: ['Python', 'Jupyter Notebook', 'Machine Learning', 'NLP'],
-    tag: 'web', color: 'linear-gradient(135deg,#1c1007,#78350f,#d97706)',
+    tag: 'web', color: 'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
     liveUrl: 'https://github.com/Nirjala34/AICoursework2_NirjalaShrestha',
     githubUrl: 'https://github.com/Nirjala34/AICoursework2_NirjalaShrestha',
   },
@@ -212,7 +205,7 @@ function renderProjects(filter) {
     card.innerHTML = `
       <div class="project-img-wrap">
         <div style="width:100%;height:100%;background:${p.color};display:flex;align-items:center;justify-content:center;">
-          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="1">
             <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
           </svg>
         </div>
@@ -282,6 +275,8 @@ const dotsEl = document.getElementById('testimonialDots');
 let currentSlide = 0;
 
 function initTestimonials() {
+  // If the testimonials section isn't present in the HTML, skip initialisation safely
+  if (!track || !dotsEl) return;
   testimonials.forEach((t) => {
     const card = document.createElement('div');
     card.className = 'testimonial-card';
@@ -354,4 +349,6 @@ document.getElementById('contactForm').addEventListener('submit', async function
 renderSkills();
 renderProjects('all');
 initTestimonials();
-setInterval(() => goTo((currentSlide + 1) % testimonials.length), 4200);
+if (track && dotsEl) {
+  setInterval(() => goTo((currentSlide + 1) % testimonials.length), 4200);
+}
