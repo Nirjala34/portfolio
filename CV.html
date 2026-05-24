@@ -79,6 +79,7 @@
 
         .item {
             margin-bottom: 20px;
+            break-inside: avoid;
         }
 
         .item-header {
@@ -116,19 +117,28 @@
             display: block;
         }
 
+        @page {
+            size: A4;
+            margin: 12mm;
+        }
+
         @media print {
             body {
                 padding: 0;
+                margin: 0;
                 background: white;
             }
 
             .cv-container {
                 box-shadow: none;
                 padding: 0;
+                margin: 0;
+                max-width: 100%;
+                width: 100%;
             }
 
             .no-print {
-                display: none;
+                display: none !important;
             }
         }
 
@@ -233,12 +243,71 @@
         </section>
 
         <section>
-            <h2>Key Projects</h2>
-            <p class="desc">
-                <strong>Luxury Nepal:</strong> Travel App UI/UX design featuring complex booking flows.<br>
-                <strong>MoodDiary:</strong> .NET Web Application for emotional tracking and journaling.<br>
-                <strong>Purito:</strong> High-fidelity Skincare E-commerce Mobile UI.
-            </p>
+            <h2>Projects</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <span>Luxury Nepal — Travel App UI/UX</span>
+                    <span>Figma, Prototyping, User Flows</span>
+                </div>
+                <p class="desc">Designed a destination discovery and itinerary planning app celebrating Nepal with custom user flows and interactive prototypes.</p>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span>Purito — Skincare App UI</span>
+                    <span>Figma, Mobile UI, UI Design</span>
+                </div>
+                <p class="desc">Created a clean mobile interface featuring skincare type quizzes, product discovery, and ingredient tracking.</p>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span>Audely — Mobile App UI</span>
+                    <span>Figma, Mobile UI, Prototyping</span>
+                </div>
+                <p class="desc">Designed a sleek mobile application with custom micro-interactions and interactive high-fidelity prototypes.</p>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span>Fresh Bakey — Food App UI</span>
+                    <span>Figma, Prototyping, Mobile UI</span>
+                </div>
+                <p class="desc">Crafted a warm, user-friendly bakery ordering and delivery mobile interface with complete checkout flows.</p>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span>Nipuna Prabidhik Sewa — Web Designs</span>
+                    <span>Figma, Web Design, E-Commerce UI</span>
+                </div>
+                <p class="desc">Designed both a professional corporate website and a supermarket e-commerce dashboard with product listings and checkout flows.</p>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span>MoodDiary — .NET Web Application</span>
+                    <span>.NET, C#, ASP.NET, HTML/CSS</span>
+                </div>
+                <p class="desc">Built a journaling web app that helps users log daily moods, write logs, and view interactive emotional trends over time.</p>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span>Redesigning QMB — Mobile UI Redesign</span>
+                    <span>Figma, UI Design, UX Auditing</span>
+                </div>
+                <p class="desc">Performed layout redesign on mobile screens to improve visual hierarchy, typography, and user retention metrics.</p>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span>AI Spam Detection Filter</span>
+                    <span>Python, Jupyter Notebook, ML, NLP</span>
+                </div>
+                <p class="desc">Trained a machine learning model to classify messages and emails as spam or ham using Natural Language Processing (NLP).</p>
+            </div>
         </section>
     </div>
 </body>

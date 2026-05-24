@@ -18,7 +18,7 @@
     <!-- Devicons for skill logos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-new.css" />
 </head>
 
 <body>
@@ -185,7 +185,7 @@
                     </div>
 
                     <div class="about-actions">
-                        <a href="CV.html" class="btn-primary" download="Nirjala_Shrestha_CV.html" id="downloadCvBtn">
+                        <a href="assets/Nirjala_Shrestha_CV.pdf" download="Nirjala_Shrestha_CV.pdf" class="btn-primary" id="downloadCvBtn">
                             Download CV
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
@@ -329,7 +329,7 @@
 
             <div class="contact-grid">
                 <div class="contact-info reveal">
-                    <div class="contact-card cc-email">
+                    <a href="mailto:pratistha708@gmail.com" class="contact-card cc-email">
                         <div class="cc-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                 <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -340,7 +340,7 @@
                             <span class="cc-label">Email Me</span>
                             <span class="cc-value">pratistha708@gmail.com</span>
                         </div>
-                    </div>
+                    </a>
                     <div class="contact-card cc-location">
                         <div class="cc-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -385,9 +385,11 @@
                     </div>
                 </div>
 
-                <form class="contact-form reveal" id="contactForm">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
+                <form class="contact-form reveal" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                    <!-- TODO: Replace the value below with your actual Web3Forms access key from web3forms.com -->
+                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+                    <input type="hidden" name="from_name" value="Portfolio Contact Form">
+                    <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="contactName">Your Name</label>

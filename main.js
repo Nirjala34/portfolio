@@ -201,6 +201,7 @@ function renderProjects(filter) {
     const card = document.createElement('div');
     card.className = 'project-card' + (i === 0 && filter === 'all' ? ' featured' : '');
     if (!show) card.setAttribute('data-hidden', 'true');
+    card.style.animationDelay = `${i * 0.1}s`;
     card.setAttribute('data-tag', p.tag);
     card.innerHTML = `
       <div class="project-img-wrap">
@@ -308,42 +309,69 @@ function goTo(idx) {
 
 /* Interval managed in INITIALIZE block below */
 
-/* ── CONTACT FORM ─────────────────────────────── */
-document.getElementById('contactForm').addEventListener('submit', async function (e) {
-  e.preventDefault();
-  const form = e.target;
-  const btn = document.getElementById('submitContactBtn');
-  const txt = btn.querySelector('.btn-send-text');
-  const successMsg = document.getElementById('formSuccess');
-  // Using FormSubmit.co - Easy and free! 
-  // No account needed, just click the confirmation link in your Gmail the FIRST time someone sends a message.
-  const FORMSUBMIT_URL = 'https://formsubmit.co/ajax/pratistha708@gmail.com';
+/* ── CONTACT FORM (Web3Forms AJAX Submission) ── */
+const contactForm = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitContactBtn');
+const submitBtnText = submitBtn ? submitBtn.querySelector('.btn-send-text') : null;
+const formSuccess = document.getElementById('formSuccess');
 
-  txt.textContent = 'Sending...';
-  btn.disabled = true;
+if (contactForm) {
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-  try {
-    const response = await fetch(FORMSUBMIT_URL, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    });
-
-    if (response.ok) {
-      successMsg.classList.add('show');
-      successMsg.innerHTML = '✅ Sent! Please check your Gmail (pratistha708@gmail.com) and CLICK THE CONFIRMATION LINK from FormSubmit to activate your form.';
-      form.reset();
-    } else {
-      throw new Error('Oops! Something went wrong.');
+    // Check if the placeholder access key is still present
+    const accessKeyInput = contactForm.querySelector('input[name="access_key"]');
+    if (accessKeyInput && accessKeyInput.value === 'YOUR_WEB3FORMS_ACCESS_KEY_HERE') {
+      alert('Please configure your Web3Forms access key in index.html before sending messages.');
+      return;
     }
-  } catch (error) {
-    alert('Failed to send! Please email me directly at pratistha708@gmail.com');
-  } finally {
-    txt.textContent = 'Send Message';
-    btn.disabled = false;
-    setTimeout(() => successMsg.classList.remove('show'), 8000);
-  }
-});
+
+    // Set loading state
+    if (submitBtn) submitBtn.disabled = true;
+    const originalText = submitBtnText ? submitBtnText.textContent : 'Send Message';
+    if (submitBtnText) submitBtnText.textContent = 'Sending...';
+
+    const formData = new FormData(contactForm);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          // Success
+          if (formSuccess) {
+            formSuccess.textContent = '✅ Message sent successfully! Thank you.';
+            formSuccess.classList.add('show');
+          }
+          contactForm.reset();
+          // Hide success message after 5 seconds
+          setTimeout(() => {
+            if (formSuccess) formSuccess.classList.remove('show');
+          }, 5000);
+        } else {
+          // Failure from API
+          alert('Something went wrong: ' + (data.message || 'Please try again later.'));
+        }
+      })
+      .catch(error => {
+        console.error('Error submitting form:', error);
+        alert('An error occurred. Please check your connection and try again.');
+      })
+      .finally(() => {
+        // Reset button loading state
+        if (submitBtn) submitBtn.disabled = false;
+        if (submitBtnText) submitBtnText.textContent = originalText;
+      });
+  });
+}
+
+/* ── CV DOWNLOAD AS PDF ─────────────────────────────── */
+// The CV is now pre-rendered as a high-quality PDF in assets/Nirjala_Shrestha_CV.pdf
+// to ensure perfect styling, selectable text, and zero rendering bugs.
+// Clicking the download button will natively download this file.
+
 
 /* ── INITIALIZE ──────────────────────────────── */
 renderSkills();
