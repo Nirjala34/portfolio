@@ -77,16 +77,16 @@ if (heroStats) counterObserver.observe(heroStats);
 
 /* ── SKILLS DATA & RENDER ─────────────────────── */
 const allSkills = [
+  { icon: 'devicon-figma-plain colored', name: 'Figma' },
   { icon: 'devicon-html5-plain colored', name: 'HTML' },
   { icon: 'devicon-css3-plain colored', name: 'CSS' },
   { icon: 'devicon-javascript-plain colored', name: 'JavaScript' },
   { icon: 'devicon-dot-net-plain-wordmark colored', name: '.NET' },
   { icon: 'devicon-laravel-plain colored', name: 'Laravel' },
-  { icon: 'devicon-figma-plain colored', name: 'Figma' },
-  { icon: 'devicon-canva-original colored', name: 'Canva' },
   { icon: 'devicon-github-original', name: 'GitHub' },
-  { icon: 'devicon-jira-plain colored', name: 'Jira' },
   { svg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:2rem;height:2rem;color:#f59e0b"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg>`, name: 'SEO' },
+  { icon: 'devicon-canva-original colored', name: 'Canva' },
+  { icon: 'devicon-jira-plain colored', name: 'Jira' },
 ];
 
 const skillsGrid = document.getElementById('skillsGrid');
@@ -114,8 +114,6 @@ const projectColors = [
   'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
   'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
   'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
-  'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
-  'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
 ];
 
 const projects = [
@@ -128,46 +126,6 @@ const projects = [
     githubUrl: '#', featured: true,
   },
   {
-    title: 'Purito - Skincare App UI',
-    desc: 'A clean and elegant Skincare App UI designed in Figma - featuring product discovery, skin type quiz, ingredient explorer, and a soft, premium aesthetic.',
-    stack: ['Figma', 'UI Design', 'Mobile UI', 'Prototyping'],
-    tag: 'web', color: 'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
-    liveUrl: 'https://www.figma.com/design/6PPUwGoz1CffPnE4MeCow0/Untitled?node-id=2203-7959&t=hUQ0B1TAfxttXVfx-1',
-    githubUrl: '#',
-  },
-  {
-    title: 'Audely - Mobile App UI',
-    desc: 'A sleek and modern mobile app UI designed in Figma - thoughtfully crafted user flows, clean layouts, and an intuitive interactive prototype.',
-    stack: ['Figma', 'Mobile UI', 'Prototyping', 'User Flows'],
-    tag: 'mobile', color: 'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
-    liveUrl: 'https://www.figma.com/design/MeQ4tExf6vHtKaoqykMHsN/Untitled?node-id=244-832&t=7Rhx7lBfD9mjq0IJ-1',
-    githubUrl: '#',
-  },
-  {
-    title: 'Fresh Bakey - Food App UI',
-    desc: 'A warm and appetizing Food Delivery & Bakery app UI - featuring menu browsing, order flows, and a delightful visual design crafted in Figma.',
-    stack: ['Figma', 'UI Design', 'Prototyping', 'Mobile UI'],
-    tag: 'web', color: 'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
-    liveUrl: 'https://www.figma.com/design/MeQ4tExf6vHtKaoqykMHsN/Untitled?node-id=1552-1488&t=7Rhx7lBfD9mjq0IJ-1',
-    githubUrl: '#',
-  },
-  {
-    title: 'Nipuna Prabidhik Sewa - Website Design',
-    desc: 'A professional website design for Nipuna Prabidhik Sewa - clean layout, modern UI components, and a user-friendly structure built in Figma.',
-    stack: ['Figma', 'Web Design', 'UI Design', 'Prototyping'],
-    tag: 'web', color: 'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
-    liveUrl: 'https://www.figma.com/design/MeQ4tExf6vHtKaoqykMHsN/Untitled?node-id=0-1&t=7Rhx7lBfD9mjq0IJ-1',
-    githubUrl: '#',
-  },
-  {
-    title: 'Nipuna Prabidhik Sewa - Website Design',
-    desc: 'A complete supermarket e-commerce website design in Figma - product listings, categories, cart flow, and a clean, accessible shopping experience.',
-    stack: ['Figma', 'Web Design', 'E-Commerce UI', 'Prototyping'],
-    tag: 'web', color: 'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
-    liveUrl: 'https://www.figma.com/design/MeQ4tExf6vHtKaoqykMHsN/Untitled?node-id=0-1&t=7Rhx7lBfD9mjq0IJ-1',
-    githubUrl: '#',
-  },
-  {
     title: 'MoodDiary - .NET Web App',
     desc: 'A mood tracking web application built with ASP.NET - lets users log daily moods, write journal entries, and visualise emotional patterns over time.',
     stack: ['.NET', 'C#', 'ASP.NET', 'HTML/CSS'],
@@ -176,20 +134,20 @@ const projects = [
     githubUrl: 'https://github.com/Nirjala34/MoodDiary/tree/main',
   },
   {
+    title: 'Purito - Skincare App UI',
+    desc: 'A clean and elegant Skincare App UI designed in Figma - featuring product discovery, skin type quiz, ingredient explorer, and a soft, premium aesthetic.',
+    stack: ['Figma', 'UI Design', 'Mobile UI', 'Prototyping'],
+    tag: 'mobile', color: 'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
+    liveUrl: 'https://www.figma.com/design/6PPUwGoz1CffPnE4MeCow0/Untitled?node-id=2203-7959&t=hUQ0B1TAfxttXVfx-1',
+    githubUrl: '#',
+  },
+  {
     title: 'Redesigning QMB - Mobile App UI',
     desc: 'Redesigned the mobile app UI originally created by a senior designer - improved visual hierarchy, modernised components, and enhanced the overall user experience in Figma.',
     stack: ['Figma', 'Mobile UI', 'Prototyping', 'User Flows'],
     tag: 'mobile', color: 'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
     liveUrl: 'https://www.figma.com/design/djJuCQnfQol4E4QeGDAxVa/QMB-Mobile-App?node-id=3311-3&t=C7StpmhLZ1zvUq6g-1',
     githubUrl: '#',
-  },
-  {
-    title: 'AI Spam Detection Filter',
-    desc: 'A machine learning spam detection model built with Python in Jupyter Notebook - classifies messages as spam or ham using NLP techniques and trained on real email datasets.',
-    stack: ['Python', 'Jupyter Notebook', 'Machine Learning', 'NLP'],
-    tag: 'web', color: 'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
-    liveUrl: 'https://github.com/Nirjala34/AICoursework2_NirjalaShrestha',
-    githubUrl: 'https://github.com/Nirjala34/AICoursework2_NirjalaShrestha',
   },
 ];
 
