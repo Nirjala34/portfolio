@@ -160,11 +160,11 @@ const projects = [
     githubUrl: '#',
   },
   {
-    title: 'Nipuna Prabidhik Sewa - Website Design',
-    desc: 'A complete supermarket e-commerce website design in Figma - product listings, categories, cart flow, and a clean, accessible shopping experience.',
+    title: 'Fishzone - Seafood E-Commerce UI',
+    desc: 'A fresh and modern UI/UX design for Fishzone, an online seafood store - featuring intuitive navigation, category filters, detailed product pages, and a seamless checkout flow.',
     stack: ['Figma', 'Web Design', 'E-Commerce UI', 'Prototyping'],
     tag: 'web', color: 'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
-    liveUrl: 'https://www.figma.com/design/MeQ4tExf6vHtKaoqykMHsN/Untitled?node-id=0-1&t=7Rhx7lBfD9mjq0IJ-1',
+    liveUrl: 'https://www.figma.com/design/MeQ4tExf6vHtKaoqykMHsN/Untitled?node-id=0-1&t=Y3tyuI7fO3ZQMSl4-1',
     githubUrl: '#',
   },
   {
