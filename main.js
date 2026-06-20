@@ -176,6 +176,14 @@ const projects = [
     githubUrl: 'https://github.com/Nirjala34/MoodDiary/tree/main',
   },
   {
+    title: 'Kumari Cinemas - Cinema Booking Web App',
+    desc: 'A cinema booking and management web application designed and developed independently using ASP.NET, C#, and Oracle Database.',
+    stack: ['ASP.NET', 'C#', 'Oracle Database', 'Web Application'],
+    tag: 'web', color: 'linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%)',
+    liveUrl: 'https://github.com/Nirjala34/portfolio',
+    githubUrl: 'https://github.com/Nirjala34/portfolio',
+  },
+  {
     title: 'Redesigning QMB - Mobile App UI',
     desc: 'Redesigned the mobile app UI originally created by a senior designer - improved visual hierarchy, modernised components, and enhanced the overall user experience in Figma.',
     stack: ['Figma', 'Mobile UI', 'Prototyping', 'User Flows'],
