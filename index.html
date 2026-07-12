@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8" />
@@ -12,16 +12,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet" />
 
     <!-- Devicons for skill logos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
 
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <link rel="stylesheet" href="style-new.css" />
 </head>
 
 <body>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress-bar"></div>
+
+    <!-- Ambient Canvas Background -->
+    <canvas id="ambient-canvas"></canvas>
+
+    <!-- Custom Cursor elements -->
+    <div id="custom-cursor-dot"></div>
+    <div id="custom-cursor-ring"></div>
 
     <!-- ═══════════════════ NAVIGATION ═══════════════════ -->
     <nav id="navbar">
@@ -34,7 +47,13 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="#contact" class="btn-nav">Hire Me</a>
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark/light theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="#contact" class="btn-nav">Hire Me</a>
+            </div>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                 <span></span><span></span><span></span>
             </button>
@@ -50,13 +69,7 @@
 
     <!-- ═══════════════════ HERO ═══════════════════ -->
     <section class="hero-premium" id="hero">
-        <!-- Subtle dot grid pattern -->
         <div class="hero-grid-pattern"></div>
-
-        <!-- Glowing background gradient orbs -->
-        <div class="hero-glow-orb orb-violet"></div>
-        <div class="hero-glow-orb orb-blue"></div>
-
         <div class="hero-premium-container">
             <!-- Left Info Column -->
             <div class="hero-premium-info">
@@ -67,8 +80,7 @@
 
                 <h1 class="hero-premium-title">
                     Hi, I'm Nirjala<br>
-                    Crafting Beautiful<br>
-                    Digital Products
+                    <span class="gradient-text text-scramble" id="scramble-title">UI/UX Designer</span><br>
                 </h1>
 
                 <p class="hero-premium-desc">
@@ -77,13 +89,43 @@
                 </p>
 
                 <div class="hero-premium-cta">
-                    <a href="#projects" class="btn-premium-primary">
+                    <a href="#projects" class="btn-primary">
                         View My Work
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </a>
-                    <a href="#contact" class="btn-premium-secondary">Let's Talk</a>
+                    <a href="#contact" class="btn-secondary">Let's Talk</a>
+                </div>
+            </div>
+
+            <!-- Right Visual Column -->
+            <div class="hero-premium-visual">
+                <div class="avatar-halo"></div>
+                <div class="avatar-cutout-wrap">
+                    <img src="assets/avatar.jpg" alt="Nirjala Shrestha" class="avatar-cutout-img" />
+                </div>
+                <!-- Floating Glass Cards -->
+                <div class="floating-glass-card card-figma">
+                    <span class="icon"><i data-lucide="palette"></i></span>
+                    <div>
+                        <h4>Figma Pro</h4>
+                        <p>Design Systems</p>
+                    </div>
+                </div>
+                <div class="floating-glass-card card-backend">
+                    <span class="icon"><i data-lucide="server"></i></span>
+                    <div>
+                        <h4>Backend Dev</h4>
+                        <p>Laravel · .NET</p>
+                    </div>
+                </div>
+                <div class="floating-glass-card card-code">
+                    <span class="icon"><i data-lucide="code-xml"></i></span>
+                    <div>
+                        <h4>Frontend Dev</h4>
+                        <p>HTML · CSS · JS</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -92,12 +134,12 @@
     <!-- ═══════════════════ ABOUT ═══════════════════ -->
     <section class="section about-section" id="about">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <span class="section-tag">Who I Am</span>
                 <h2 class="section-title">About Me</h2>
             </div>
             <div class="about-grid">
-                <div class="about-image-wrap reveal">
+                <div class="about-image-wrap reveal" style="--i: 1">
                     <div class="about-img-frame">
                         <img src="assets/avatar.jpg" alt="About Nirjala Shrestha" class="about-img" />
                     </div>
@@ -107,7 +149,7 @@
                     </div>
                 </div>
 
-                <div class="about-text reveal">
+                <div class="about-text reveal" style="--i: 2">
                     <p class="about-hello">Hello There! </p>
                     <h3 class="about-heading">UI/UX Designer with Frontend Knowledge<br>Based in Pokhara</h3>
                     <p class="about-body">
@@ -118,8 +160,7 @@
                     </p>
                     <p class="about-body">
                         I believe great design goes beyond aesthetics it's about solving real problems for real
-                        people.
-                        When I'm not designing, you'll find me exploring new design trends, sketching ideas, or
+                        people. When I'm not designing, you'll find me exploring new design trends, sketching ideas, or
                         learning something new over a cup of tea.
                     </p>
 
@@ -142,13 +183,31 @@
                         </div>
                     </div>
 
+                    <!-- Animated Stats Counters -->
+                    <div class="about-stats-minimal">
+                        <div class="stat-item-min">
+                            <span class="stat-num" data-target="2">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-text">Years Experience</span>
+                        </div>
+                        <div class="stat-item-min">
+                            <span class="stat-num" data-target="15">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-text">Projects Done</span>
+                        </div>
+                        <div class="stat-item-min">
+                            <span class="stat-num" data-target="8">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-text">Happy Clients</span>
+                        </div>
+                    </div>
+
                     <div class="about-actions">
-                        <a href="assets/Nirjala_Shrestha_CV.pdf" download="Nirjala_Shrestha_CV.pdf" class="btn-primary"
+                        <button class="btn-primary" id="viewCvBtn">
+                            View CV
+                            <i data-lucide="eye" style="width: 18px; height: 18px;"></i>
+                        </button>
+                        <a href="assets/Nirjala_Shrestha_CV.pdf" download="Nirjala_Shrestha_CV.pdf" class="btn-secondary"
                             id="downloadCvBtn">
-                            Download CV
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
-                            </svg>
+                            Download PDF
+                            <i data-lucide="download" style="width: 18px; height: 18px;"></i>
                         </a>
                     </div>
                 </div>
@@ -159,15 +218,14 @@
     <!-- ═══════════════════ SKILLS ═══════════════════ -->
     <section class="section skills-section" id="skills">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <span class="section-tag">What I Know</span>
                 <h2 class="section-title">My Skills</h2>
                 <p class="section-sub">Technologies I've mastered during my professional journey.</p>
             </div>
 
-
             <div class="skills-grid" id="skillsGrid">
-                <!-- injected by JS -->
+                <!-- Injected by JS -->
             </div>
         </div>
     </section>
@@ -175,20 +233,20 @@
     <!-- ═══════════════════ PROJECTS ═══════════════════ -->
     <section class="section projects-section" id="projects">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <span class="section-tag">My Work</span>
                 <h2 class="section-title">Featured Projects</h2>
                 <p class="section-sub">A curated selection of projects that showcase my skills and creativity.</p>
             </div>
 
-            <div class="projects-filter">
+            <div class="projects-filter reveal">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="web">Web App Design</button>
                 <button class="filter-btn" data-filter="mobile">Mobile Design</button>
             </div>
 
             <div class="projects-grid" id="projectsGrid">
-                <!-- injected by JS -->
+                <!-- Injected by JS -->
             </div>
         </div>
     </section>
@@ -196,20 +254,16 @@
     <!-- ═══════════════════ EXPERIENCE ═══════════════════ -->
     <section class="section experience-section" id="experience">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <span class="section-tag">My Journey</span>
                 <h2 class="section-title">Education &amp; Experience</h2>
             </div>
 
             <div class="journey-grid">
                 <!-- Left Column: Work Experience -->
-                <div class="journey-column reveal">
+                <div class="journey-column reveal" style="--i: 1">
                     <h3 class="journey-column-title">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            class="column-title-icon">
-                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                        </svg>
+                        <i data-lucide="briefcase"></i>
                         Work Experience
                     </h3>
                     <div class="journey-timeline">
@@ -222,8 +276,7 @@
                                 <span class="journey-company">Fishtail Info Solutions</span>
                                 <p class="journey-desc">Worked as an SEO Intern at Fishtail Info Solutions, applying SEO
                                     techniques including keyword research, content optimization, and link-building to
-                                    improve
-                                    website visibility and search rankings.</p>
+                                    improve website visibility and search rankings.</p>
                             </div>
                         </div>
                         <!-- Experience Item 2 -->
@@ -245,21 +298,16 @@
                                 <h4 class="journey-role">UI/UX Intern</h4>
                                 <span class="journey-company">Nipuna Prabidhik Sewa</span>
                                 <p class="journey-desc">Learned UI/UX design principles, tools, and best practices, and
-                                    applied them
-                                    to real-world projects.</p>
+                                    applied them to real-world projects.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Right Column: Education -->
-                <div class="journey-column reveal">
+                <div class="journey-column reveal" style="--i: 2">
                     <h3 class="journey-column-title">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            class="column-title-icon">
-                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                            <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
-                        </svg>
+                        <i data-lucide="graduation-cap"></i>
                         Education
                     </h3>
                     <div class="journey-timeline">
@@ -282,38 +330,31 @@
     </section>
 
 
-
     <!-- ═══════════════════ CONTACT ═══════════════════ -->
     <section class="section contact-section" id="contact">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <span class="section-tag">Get in Touch</span>
                 <h2 class="section-title">Let's Work Together</h2>
                 <p class="section-sub">Have a project in mind? Let's create something amazing together.</p>
             </div>
 
             <div class="contact-grid">
-                <div class="contact-info reveal">
+                <div class="contact-info reveal" style="--i: 1">
                     <a href="mailto:pratistha708@gmail.com" class="contact-card cc-email">
                         <div class="cc-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <rect x="2" y="4" width="20" height="16" rx="2" />
-                                <path d="M2 8l10 6 10-6" />
-                            </svg>
+                            <i data-lucide="mail"></i>
                         </div>
-                        <div>
+                        <div class="cc-details">
                             <span class="cc-label">Email Me</span>
                             <span class="cc-value">pratistha708@gmail.com</span>
                         </div>
                     </a>
                     <div class="contact-card cc-location">
                         <div class="cc-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M12 21c-4-4-8-7.418-8-11a8 8 0 1116 0c0 3.582-4 7-8 11z" />
-                                <circle cx="12" cy="10" r="3" />
-                            </svg>
+                            <i data-lucide="map-pin"></i>
                         </div>
-                        <div>
+                        <div class="cc-details">
                             <span class="cc-label">Location</span>
                             <span class="cc-value">Pokhara, Nepal</span>
                         </div>
@@ -351,8 +392,7 @@
                 </div>
 
                 <form class="contact-form reveal" id="contactForm" action="https://api.web3forms.com/submit"
-                    method="POST">
-                    <!-- TODO: Replace the value below with your actual Web3Forms access key from web3forms.com -->
+                    method="POST" style="--i: 2">
                     <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
                     <input type="hidden" name="from_name" value="Portfolio Contact Form">
                     <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio">
@@ -376,12 +416,9 @@
                         <textarea id="contactMessage" name="message" rows="5"
                             placeholder="Hi Nirjala, I'd love to work with you on..." required></textarea>
                     </div>
-                    <button type="submit" class="btn-primary btn-full" id="submitContactBtn">
+                    <button type="submit" class="btn-primary" id="submitContactBtn">
                         <span class="btn-send-text">Send Message</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="22" y1="2" x2="11" y2="13" />
-                            <polygon points="22 2 15 22 11 13 2 9 22 2" />
-                        </svg>
+                        <i data-lucide="send-horizontal" style="width: 18px; height: 18px;"></i>
                     </button>
                     <div class="form-success" id="formSuccess">
                         Thank you! I'll get back to you soon.
@@ -397,12 +434,104 @@
             <a href="#hero" class="footer-logo">NS<span class="dot">.</span></a>
             <p class="footer-copy">© 2026 Nirjala Shrestha. All Rights Reserved </p>
             <a href="#hero" class="back-to-top" id="backToTop" aria-label="Back to top">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 15l7-7 7 7" />
-                </svg>
+                <i data-lucide="chevron-up"></i>
             </a>
         </div>
     </footer>
+
+    <!-- Project Detail Modal -->
+    <div class="modal-overlay" id="projectModalOverlay">
+        <div class="project-modal" id="projectModal">
+            <button class="modal-close-btn" id="closeProjectModal" aria-label="Close modal">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="project-modal-content" id="projectModalContent">
+                <!-- Injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- CV Drawer Modal -->
+    <div class="cv-drawer-overlay" id="cvDrawerOverlay">
+        <div class="cv-drawer" id="cvDrawer">
+            <div class="cv-drawer-header">
+                <span class="cv-drawer-title">Curriculum Vitae</span>
+                <div class="cv-drawer-actions">
+                    <button class="cv-action-btn" id="printCvBtn" aria-label="Print CV">
+                        <i data-lucide="printer"></i>
+                    </button>
+                    <button class="cv-action-btn" id="closeCvDrawer" aria-label="Close drawer">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="cv-drawer-body">
+                <div class="cv-paper">
+                    <div class="cv-paper-header">
+                        <h2 class="cv-paper-name">Nirjala Shrestha</h2>
+                        <div class="cv-paper-role">UI/UX Designer &amp; Frontend Developer</div>
+                        <div class="cv-paper-contact">
+                            <span>Pokhara, Nepal</span> | 
+                            <span>pratistha708@gmail.com</span> | 
+                            <span>github.com/Nirjala34</span>
+                        </div>
+                    </div>
+                    <div class="cv-paper-section">
+                        <h3>Professional Summary</h3>
+                        <p class="cv-paper-desc">
+                            Creative UI/UX Designer with a strong eye for clean, modern aesthetics. Passionate about building intuitive digital products that balance beauty with usability. Skilled in Figma and design systems, complemented by hands-on knowledge of frontend development (HTML, CSS, JS, .NET).
+                        </p>
+                    </div>
+                    <div class="cv-paper-section">
+                        <h3>Education</h3>
+                        <div class="cv-paper-item">
+                            <div class="cv-paper-item-header">
+                                <span>BIT (Bachelors in IT)</span>
+                                <span>2023 - Present</span>
+                            </div>
+                            <div class="cv-paper-item-sub">Informatics College Pokhara</div>
+                        </div>
+                    </div>
+                    <div class="cv-paper-section">
+                        <h3>Work Experience</h3>
+                        <div class="cv-paper-item">
+                            <div class="cv-paper-item-header">
+                                <span>SEO Intern</span>
+                                <span>2026 - Present</span>
+                            </div>
+                            <div class="cv-paper-item-sub">Fishtail Info Solutions</div>
+                            <p class="cv-paper-desc">Applying SEO techniques including keyword research, content optimization, and link-building to improve visibility and search rankings.</p>
+                        </div>
+                        <div class="cv-paper-item">
+                            <div class="cv-paper-item-header">
+                                <span>Junior Designer</span>
+                                <span>2025 - 2026</span>
+                            </div>
+                            <div class="cv-paper-item-sub">Nipuna Prabidhik Sewa</div>
+                            <p class="cv-paper-desc">Designed responsive web interfaces and mobile app screens. Redesigned existing UIs for better user retention and modern aesthetics.</p>
+                        </div>
+                    </div>
+                    <div class="cv-paper-section">
+                        <h3>Technical Skills</h3>
+                        <div class="cv-paper-skills-grid">
+                            <div class="cv-paper-skill-cat">
+                                <span class="cv-paper-skill-title">Design</span>
+                                <span class="cv-paper-skill-val">Figma, Canva, Wireframing</span>
+                            </div>
+                            <div class="cv-paper-skill-cat">
+                                <span class="cv-paper-skill-title">Code</span>
+                                <span class="cv-paper-skill-val">HTML, CSS, JS, .NET, Laravel</span>
+                            </div>
+                            <div class="cv-paper-skill-cat">
+                                <span class="cv-paper-skill-title">Tools</span>
+                                <span class="cv-paper-skill-val">GitHub, Jira, SEO</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="main.js"></script>
 </body>
